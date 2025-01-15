@@ -74,9 +74,9 @@ def preprocess_text(text):
     try:
         language = detect(text)
         if language != "en":
-            raise ValueError(f"Unsupported language detected.")
+            raise ValueError(f"Unsupported language detected!")
     except LangDetectException:
-        raise ValueError("Unable to detect language. Please ensure the text is valid.")
+        raise ValueError("Unable to detect language. Please ensure the text is valid!")
     return text
 
 # Flask app
