@@ -16,12 +16,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="sweetalert2.all.min.js"></script>
     <style>
-      
+
       .f-9{
         font-size: 10px;
       }
       .f-10{
-        font-size: 60px;
+        font-size: 70px;
       }
       .text-pur{
         color:#6c3483;
@@ -50,32 +50,39 @@
         font-weight: 100;
         font-style: normal;
       }
+      .text-justify {
+        text-align: justify;
+      }
     </style>
   </head>
-  <body class="bg-color f-style">
+  <body class="bg-color f-style" style="height: 100vh">
     <nav class="navbar shadow-sm">
       <div class="container">
         <div class="d-flex">
-          <i class="bi bi-robot text-pur-2 fs-3 me-3"></i>
+          <i class="bi bi-file-text text-pur-2 fs-3 me-3"></i>
           <div>
-            <a class="navbar-brand fw-bold empty">Waste Prediction</a>
-            <p class="empty navbar-brand fw-bold f-9">By OtonoseKanade</p>
+            <a class="navbar-brand fw-bold empty text-pur-2">News Categorization</a>
+            <p class="empty navbar-brand fw-bold f-9 text-pur-2">By OtonoseKanade</p>
           </div>
+        </div>
+        <div>
+          <p class="empty fw-semibold text-pur-2" id="btn-abountUs">About Us</p>
         </div>
       </div>
     </nav>
     <div class="container mt-5">
-      <div class="row" style="height: 30rem;">
+      <div class="row">
         <div class="col-6 d-flex align-items-center">
           <div>
             <p class="empty fw-bold f-10 text-pur-2">News</p>
             <p class="empty fw-bold f-10 text-pur-2">Categorization</p>
-            <p class="empty fs-5 fw-semibold text-secondary">We can categorize your news here</p>
+            <p class="empty fs-5 fw-semibold text-secondary mb-2">Categorize your news by its topic, fast and fast</p>
+            <div id="result"></div>
           </div>
         </div>
-        <div class="col-6 d-flex justify-content-center align-items-center">
+        <div class="col-6 d-flex align-items-center">
           <div style="width: 80%;">
-            <textarea id="newsText" class="form-control" placeholder="Enter news here" cols="30" rows="10" style="resize: none;"></textarea>
+            <textarea id="newsText" class="form-control" placeholder="Enter news here" cols="30" rows="20" style="resize: none;"></textarea>
             <div class="mt-2 d-flex justify-content-end">
               <div class="me-1">
                 <button id="btn-clear" class="btn btn-outline-secondary fw-semibold shadow-sm" type="button"><i class="bi bi-trash3"></i></button>
@@ -99,6 +106,19 @@
         <div class="input-group d-none" id="chatInputGroup">
           <input type="text" class="form-control rounded-0" placeholder="Type a message here.." id="chat-text-desk">
           <button class="btn btn-outline-secondary submit-chat" type="button" id="submit-chat"><i class="bi bi-send"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modal-aboutUs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-color-2">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fw-semibold text-justify">
+            Welcome to our website, where innovation meets simplicity in news categorization and prediction! Our platform is designed to revolutionize how you interact with information by leveraging advanced technology to analyze and categorize articles with ease. Whether you're a journalist, a researcher, or a curious reader, we aim to save you time and effort by providing accurate, instant predictions about the category of any article you input. With a focus on usability and efficiency, our tool offers a streamlined experience, allowing you to concentrate on what matters most—understanding and engaging with the content.
+          </div>
         </div>
       </div>
     </div>
@@ -127,9 +147,14 @@
           const data = await response.json();
 
           if (data.error) {
-              responseContainer.innerHTML = `<div class="text-danger"><strong>Error:</strong> ${data.error}</div>`;
+              responseContainer.innerHTML = `<p class="empty fs-5 fw-semibold text-danger">Error:</strong> ${data.error}</p>`;
           } else {
-              responseContainer.innerHTML = `<div><strong>Category:</strong> ${data.category}</div>`;
+              responseContainer.innerHTML = `<div class="card rounded-4 border-0 shadow-sm" style="width: 20rem">
+                                                <div class="card-body rounded-4 p-2" style="background-color: #d7c9e4;">
+                                                  <p class="empty fs-5 fw-semibold text-pur-2">Category Prediction: ${data.category}</p>
+                                                </div>
+                                              </div>`;
+              
           }
       } catch (err) {
           responseContainer.innerHTML = `<div class="text-danger"><strong>Error:</strong> Unable to connect to the server.</div>`;
@@ -139,6 +164,12 @@
   });
 
   $(document).ready(function () {
+
+      $('#btn-abountUs').click(function () {
+        console.log('test');
+          $('#modal-aboutUs').modal('show');
+      });
+
       // Clear button functionality
       $('#btn-clear').click(function () {
           $('#newsText').val('');
