@@ -1,0 +1,611 @@
+{"intents": [
+  {
+    "tag": "greeting",
+    "patterns": ["Hi", "Hello", "Hey", "Hye", "Good day", "How are you?"],
+    "responses": ["Hello!", "Good to see you!", "Hi there, how can I help?"]
+  },
+  {
+    "tag": "farewell",
+    "patterns": ["Goodbye", "Bye", "See you later", "Talk to you later"],
+    "responses": ["Sad to see you go :(", "Goodbye!", "Come back soon!"]
+  },
+  {
+    "tag": "creator",
+    "patterns": ["Who created you?", "Who is your developer?", "Who made you?"],
+    "responses": ["I was created by Group 2."]
+  },
+  {
+    "tag": "identity",
+    "patterns": ["What is your name?", "What should I call you?", "Who are you?", "What are you", "Introduce Yourself"],
+    "responses": ["You can call me Pembaca Berita. I'm a Chatbot."]
+  },
+  {
+    "tag": "unknown",
+    "patterns": [],
+    "responses": [
+      "Sorry, I didn't understand that. Can you please rephrase?",
+      "I'm not sure what you mean. Could you clarify?"
+    ]
+  },
+  {
+    "tag": "news_categorization_intro",
+    "patterns": ["What is news categorization?", "Can you explain news categorization?", "What do you mean by news categorization?"],
+    "responses": ["News categorization is the process of automatically classifying news articles into different categories, such as Politics, Sports, Entertainment, Technology, etc."]
+  },
+  {
+    "tag": "news_categorization_use_cases",
+    "patterns": ["What are the uses of news categorization?", "How is news categorization used?", "Give me examples of news categorization applications."],
+    "responses": ["News categorization is used by media companies, news websites, and apps to classify articles by topics like Politics, Business, Sports, Health, Technology, etc., making it easier for users to find relevant content."]
+  },
+  {
+    "tag": "methods_in_news_categorization",
+    "patterns": ["What methods are used in news categorization?", "How does news categorization work?", "What techniques are used for news categorization?"],
+    "responses": ["Common methods for news categorization include machine learning algorithms like Naive Bayes, Support Vector Machines (SVM), and deep learning techniques such as Convolutional Neural Networks (CNN) and Recurrent Neural Networks (RNN)."]
+  },
+  {
+    "tag": "features_in_news_categorization",
+    "patterns": ["What are features in news categorization?", "What features are used in news categorization?", "How are features selected for news categorization?"],
+    "responses": ["In news categorization, features are often extracted from the text, such as the frequency of important words, named entity recognition (NER), topic modeling, and word embeddings (like Word2Vec or BERT)."]
+  },
+  {
+    "tag": "news_categorization_algorithm",
+    "patterns": ["What is the best algorithm for news categorization?", "Which algorithm is best for classifying news?", "What algorithm is commonly used for news categorization?"],
+    "responses": ["There isn't a single best algorithm for news categorization. Popular algorithms include Naive Bayes for simplicity, Support Vector Machines (SVM) for good performance, and deep learning methods like CNNs and LSTMs for complex tasks."]
+  },
+  {
+    "tag": "multi_category_classification",
+    "patterns": [
+      "Can news articles belong to multiple categories?",
+      "How does the system classify news into multiple categories?",
+      "Can one article be tagged under different categories?"
+    ],
+    "responses": [
+      "Yes, news articles can belong to multiple categories. For example, an article about technology in politics might fall under both the 'Technology' and 'Politics' categories. Multi-label classification techniques, such as one-vs-rest or neural network-based approaches, can handle this."
+    ]
+  },
+  {
+    "tag": "news_sources",
+    "patterns": [
+      "How do you categorize news from different sources?",
+      "Do you classify news based on its source?",
+      "How do you know which news source an article comes from?"
+    ],
+    "responses": [
+      "While news categorization primarily focuses on the content, sometimes it's important to consider the source. For example, articles from authoritative sources may be classified differently compared to lesser-known outlets. However, source-based categorization can also be implemented."
+    ]
+  },
+  {
+    "tag": "news_genre_classification",
+    "patterns": [
+      "What are the different genres of news?",
+      "Can you classify news into genres like sports, politics, and entertainment?",
+      "What genres of news can you classify?"
+    ],
+    "responses": [
+      "News can be classified into various genres, including Politics, Sports, Entertainment, Technology, Business, Health, Science, and more. These genres help organize news content and make it easier for users to find what they are interested in."
+    ]
+  },
+  {
+    "tag": "categorizing_factual_news",
+    "patterns": [
+      "How is factual news categorized?",
+      "Is there a difference in categorizing opinion vs factual news?",
+      "How do you classify objective news?"
+    ],
+    "responses": [
+      "Factual news is classified based on objective reporting, such as breaking news or factual updates about events. While opinion pieces might fall under categories like 'Opinion' or 'Editorial', factual articles are typically classified based on the subject matter, like 'Politics' or 'Business'."
+    ]
+  },
+  {
+    "tag": "error_in_classification",
+    "patterns": [
+      "What if an article is wrongly categorized?",
+      "How do you handle misclassification?",
+      "Can you correct errors in categorizing news?"
+    ],
+    "responses": [
+      "If an article is misclassified, the system can be retrained with additional data to improve accuracy. Users can also manually flag incorrect classifications, which can be used to fine-tune the model."
+    ]
+  },
+  {
+    "tag": "real_time_classification",
+    "patterns": [
+      "Can you categorize news in real-time?",
+      "How does your system handle real-time news classification?",
+      "Do you categorize news as soon as it's published?"
+    ],
+    "responses": [
+      "Yes, our system can categorize news in real-time. As soon as a news article is published, it can be automatically categorized using pre-trained models, allowing for up-to-date content delivery to users."
+    ]
+  },
+  {
+    "tag": "improving_classification_accuracy",
+    "patterns": [
+      "How can the accuracy of news classification be improved?",
+      "What can I do to make your categorization more accurate?",
+      "How do you improve news categorization accuracy?"
+    ],
+    "responses": [
+      "To improve accuracy, we continuously train the model with more labeled data, fine-tune algorithms, and incorporate user feedback. Additionally, we test different machine learning models to ensure the best results."
+    ]
+  },
+  {
+    "tag": "news_classification_accuracy",
+    "patterns": [
+      "How accurate is the news categorization system?",
+      "How do you measure the accuracy of the classification?",
+      "What metrics do you use to evaluate news categorization?"
+    ],
+    "responses": [
+      "The accuracy of the news categorization system is measured using metrics such as precision, recall, F1-score, and accuracy. These help assess how well the system is classifying articles into the correct categories."
+    ]
+  },
+  {
+    "tag": "handling_bias_in_news",
+    "patterns": [
+      "How do you handle bias in news categorization?",
+      "What about biased news articles?",
+      "How does your system avoid categorizing biased news?"
+    ],
+    "responses": [
+      "Handling bias in news categorization is crucial. Our system is trained with diverse, balanced datasets to minimize bias. We also incorporate regular checks to ensure that the system does not favor any particular viewpoint."
+    ]
+  },
+  {
+    "tag": "topic_modeling_in_news",
+    "patterns": [
+      "What is topic modeling in news categorization?",
+      "How does topic modeling help in categorizing news?",
+      "Can you explain topic modeling in news classification?"
+    ],
+    "responses": [
+      "Topic modeling is a technique used to uncover hidden topics within large collections of news articles. It helps the system understand the main themes of the articles, which aids in categorizing them into appropriate topics such as Politics, Technology, or Entertainment."
+    ]
+  },
+  {
+    "tag": "categorizing_unstructured_data",
+    "patterns": [
+      "How do you categorize unstructured data?",
+      "Can you categorize news articles from unstructured sources?",
+      "How do you handle unstructured text in news categorization?"
+    ],
+    "responses": [
+      "Unstructured data, like news articles, is first preprocessed to remove irrelevant information, tokenize the text, and extract useful features. Once the text is structured, it can be categorized using various machine learning algorithms."
+    ]
+  },
+  {
+    "tag": "handling_multilingual_news",
+    "patterns": [
+      "How do you categorize news in multiple languages?",
+      "Can the system classify news in languages other than English?",
+      "How does your system handle multilingual news?"
+    ],
+    "responses": [
+      "Our system is capable of classifying news in multiple languages. We use multilingual models like BERT and multilingual word embeddings, allowing it to handle and categorize news articles in different languages such as Spanish, French, and Mandarin."
+    ]
+  },
+  {
+    "tag": "custom_categories_for_news",
+    "patterns": [
+      "Can I add my own categories for news?",
+      "How do you add custom categories for news?",
+      "Can I create a new category for news articles?"
+    ],
+    "responses": [
+      "Yes, you can add custom categories for news. The system allows for easy customization, where new categories can be defined and integrated into the model to classify specific types of news, such as 'Local News' or 'Emerging Technologies.'"
+    ]
+  },
+  {
+    "tag": "handling_noisy_data",
+    "patterns": [
+      "How do you deal with noisy data in news articles?",
+      "What happens if there is noise in the data?",
+      "How do you clean noisy news data for categorization?"
+    ],
+    "responses": [
+      "Noisy data, such as irrelevant text or improper formatting, is cleaned during preprocessing. Techniques like stopword removal, punctuation stripping, and text normalization are applied to ensure the data is clean and relevant before categorization."
+    ]
+  },
+  {
+    "tag": "real_time_category_updates",
+    "patterns": [
+      "How do you keep news categories up to date?",
+      "Can the system update categories in real-time?",
+      "How do you handle changes in news categories?"
+    ],
+    "responses": [
+      "Our system allows real-time updates to news categories. As new topics or trends emerge, categories can be dynamically added, and the model can be retrained to classify articles under new or updated categories."
+    ]
+  },
+  {
+    "tag": "news_classification_for_sentiment_analysis",
+    "patterns": [
+      "Can you classify news articles by sentiment?",
+      "How do you categorize news by sentiment?",
+      "Can sentiment analysis be integrated into news categorization?"
+    ],
+    "responses": [
+      "Yes, sentiment analysis can be integrated with news categorization. By analyzing the tone of the article, news can be categorized as positive, negative, or neutral, which is useful for understanding public opinion on certain topics."
+    ]
+  },
+  {
+    "tag": "categorizing_fake_news",
+    "patterns": [
+      "How do you identify fake news?",
+      "Can the system classify fake news?",
+      "How does news categorization help with fake news detection?"
+    ],
+    "responses": [
+      "Fake news detection is a challenging task, but news categorization can help by analyzing the content and source. Our system looks for signs of misinformation, such as sensational language or unreliable sources, to help flag fake news."
+    ]
+  },
+  {
+    "tag": "feature_engineering_for_news_classification",
+    "patterns": [
+      "What is feature engineering in news categorization?",
+      "How do you select features for news classification?",
+      "Can you explain feature extraction for categorizing news?"
+    ],
+    "responses": [
+      "Feature engineering involves extracting meaningful features from the text to aid in categorization. For news, common features include word frequency, n-grams, named entities, and sentiment scores. These features help the model understand the content and classify it accurately."
+    ]
+  },
+  {
+    "tag": "handling_large_volumes_of_news",
+    "patterns": [
+      "How do you handle a large volume of news articles?",
+      "Can your system scale to handle many news articles at once?",
+      "How does your system manage big data in news categorization?"
+    ],
+    "responses": [
+      "Our system is designed to scale and can handle large volumes of news articles. It uses distributed computing and cloud infrastructure to process and categorize vast amounts of data efficiently, ensuring quick responses even during high traffic periods."
+    ]
+  },
+  {
+    "tag": "news_classification_for_archives",
+    "patterns": [
+      "Can you categorize archived news articles?",
+      "How do you categorize old news articles?",
+      "Is your system useful for categorizing archived news?"
+    ],
+    "responses": [
+      "Yes, our system can categorize archived news articles. It is designed to work with both new and old content, classifying archived articles into the appropriate categories based on their topics, even if they were published years ago."
+    ]
+  },
+  {
+    "tag": "categorization_accuracy_for_short_articles",
+    "patterns": [
+      "How does the system handle short news articles?",
+      "Can the categorization system classify very short news pieces?",
+      "What about news articles with limited text?"
+    ],
+    "responses": [
+      "Our system is trained to handle news articles of all lengths. For short articles, we rely on key phrases and important keywords to accurately classify them. Even with limited text, the system can effectively assign a relevant category."
+    ]
+  },
+  {
+    "tag": "news_categorization_use_cases",
+    "patterns": ["What are the uses of news categorization?", "How is news categorization used?", "Give me examples of news categorization applications."],
+    "responses": ["News categorization is used by media outlets, news websites, and apps to classify articles into topics such as 'Sports,' 'Politics,' 'Health,' and 'Business,' making it easier for users to find relevant content."]
+  },
+  {
+    "tag": "handling_novel_topics",
+    "patterns": [
+      "How do you categorize news on new or emerging topics?",
+      "Can the system classify news on topics that are not widely known?",
+      "How do you handle news about new trends or inventions?"
+    ],
+    "responses": [
+      "Our system handles emerging topics by analyzing keywords and context. It learns from new data to classify articles accurately, even if the topic is novel or emerging."
+    ]
+  },
+  {
+    "tag": "handling_conflicting_information",
+    "patterns": [
+      "How does the system handle conflicting information in news articles?",
+      "Can your system classify news when the facts are contradictory?",
+      "What happens if news articles provide different viewpoints on the same topic?"
+    ],
+    "responses": [
+      "When conflicting information is present, the system considers the context, sentiment, and overall article structure to classify it appropriately. It may also flag conflicting articles for further review."
+    ]
+  },
+  {
+    "tag": "news_categorization_for_local_news",
+    "patterns": [
+      "How do you classify local news?",
+      "Can the system categorize news specific to a particular region?",
+      "How do you handle location-specific news?"
+    ],
+    "responses": [
+      "Local news is categorized by identifying location-specific terms and regional topics. The system ensures that articles related to specific cities or regions are classified under categories like 'Local News' or 'Regional Politics.'"
+    ]
+  },
+  {
+    "tag": "dynamic_news_categorization",
+    "patterns": [
+      "How do you classify breaking news?",
+      "Can the system classify news as it breaks?",
+      "How fast is the news categorization process for breaking stories?"
+    ],
+    "responses": [
+      "Our system classifies breaking news in real-time. As soon as a news article is published, it is processed and categorized, ensuring that readers receive up-to-date content."
+    ]
+  },
+  {
+    "tag": "handling_duplicate_news",
+    "patterns": [
+      "How do you handle duplicate news articles?",
+      "What happens if the same news article is published multiple times?",
+      "Can your system detect duplicate news?"
+    ],
+    "responses": [
+      "The system detects duplicate articles using text similarity checks and algorithms. When duplicates are identified, they are either merged or flagged to prevent redundancy in classification."
+    ]
+  },
+  {
+    "tag": "news_categorization_for_social_media",
+    "patterns": [
+      "Can you classify news from social media?",
+      "How do you classify news articles from platforms like Twitter or Facebook?",
+      "Can your system process news shared on social media?"
+    ],
+    "responses": [
+      "Yes, the system can classify news from social media. It processes the content by cleaning the text and classifying it based on the context, even when sourced from platforms like Twitter or Facebook."
+    ]
+  },
+  {
+    "tag": "categorizing_multimedia_news",
+    "patterns": [
+      "Can you categorize news that includes videos or images?",
+      "How do you handle multimedia news content?",
+      "Can the system classify news articles with images and videos?"
+    ],
+    "responses": [
+      "While the primary focus is on text, multimedia news can be classified by analyzing the text associated with images or videos. Additional processing can be done for richer multimedia classification."
+    ]
+  },
+  {
+    "tag": "real_time_news_alerts",
+    "patterns": [
+      "Can you send real-time alerts for categorized news?",
+      "How do you provide real-time news updates?",
+      "Can I receive instant notifications for breaking news?"
+    ],
+    "responses": [
+      "Yes, real-time news alerts can be configured for any news category. As soon as an article is categorized, the system can send notifications or alerts to keep you updated with breaking news."
+    ]
+  },
+  {
+    "tag": "handling_localization_in_news",
+    "patterns": [
+      "How do you handle localized news?",
+      "Can you classify news based on regional preferences?",
+      "How do you handle news that caters to a specific country or city?"
+    ],
+    "responses": [
+      "Localized news is classified by identifying geographic references and regional terms. The system can categorize articles for specific cities, countries, or regions under the appropriate local categories."
+    ]
+  },
+  {
+    "tag": "handling_ambiguous_news",
+    "patterns": [
+      "What if a news article is ambiguous?",
+      "How do you classify articles with unclear topics?",
+      "What happens if the news article doesn't fit into a clear category?"
+    ],
+    "responses": [
+      "Ambiguous articles are classified by considering broader context and keywords. If the system cannot find a clear category, it may flag the article for human review or place it in a 'General News' category."
+    ]
+  },
+  {
+    "tag": "politics_news",
+    "patterns": [
+      "Can you classify news about politics?",
+      "How do you categorize political news?",
+      "What are the latest political news updates?"
+    ],
+    "responses": [
+      "Political news is classified based on topics such as elections, government policies, political leaders, international relations, and more. Articles about politics are placed under the 'Politics' category."
+    ]
+  },
+  {
+    "tag": "sports_news",
+    "patterns": [
+      "Can you classify sports news?",
+      "How do you categorize sports articles?",
+      "What sports news is trending?"
+    ],
+    "responses": [
+      "Sports news is categorized by types of sports, teams, events, and scores. Whether it is football, basketball, tennis, or the Olympics, we classify news into the 'Sports' category based on the topic."
+    ]
+  },
+  {
+    "tag": "entertainment_news",
+    "patterns": [
+      "Can you classify entertainment news?",
+      "How do you categorize news about movies and celebrities?",
+      "What is the latest in entertainment?"
+    ],
+    "responses": [
+      "Entertainment news covers topics like movies, celebrities, music, TV shows, and events. Articles in this category are classified under 'Entertainment' based on their content related to popular culture."
+    ]
+  },
+  {
+    "tag": "technology_news",
+    "patterns": [
+      "Can you classify news about technology?",
+      "How do you categorize tech news?",
+      "What are the latest technology trends?"
+    ],
+    "responses": [
+      "Tech news is categorized under 'Technology,' covering topics such as gadgets, software updates, artificial intelligence, tech companies, and scientific discoveries related to technology."
+    ]
+  },
+  {
+    "tag": "business_news",
+    "patterns": [
+      "Can you classify business news?",
+      "How do you categorize business-related news?",
+      "What is new in the business world?"
+    ],
+    "responses": [
+      "Business news is classified under the 'Business' category, focusing on topics like market trends, stock market updates, corporate mergers and acquisitions, entrepreneurship, and economic news."
+    ]
+  },
+  {
+    "tag": "health_news",
+    "patterns": [
+      "Can you classify health news?",
+      "How do you categorize health-related articles?",
+      "What are the latest health news updates?"
+    ],
+    "responses": [
+      "Health news covers topics related to medical advancements, health tips, public health issues, and disease outbreaks. Articles on health are categorized under 'Health.'"
+    ]
+  },
+  {
+    "tag": "science_news",
+    "patterns": [
+      "Can you classify science news?",
+      "How do you categorize news about science and research?",
+      "What is new in the field of science?"
+    ],
+    "responses": [
+      "Science news is categorized under 'Science,' focusing on new research, scientific discoveries, space exploration, and environmental issues."
+    ]
+  },
+  {
+    "tag": "environment_news",
+    "patterns": [
+      "Can you classify news about the environment?",
+      "How do you categorize news related to nature and sustainability?",
+      "What environmental news is trending?"
+    ],
+    "responses": [
+      "Environmental news is categorized under 'Environment,' covering topics like climate change, sustainability, pollution, wildlife conservation, and green technologies."
+    ]
+  },
+  {
+    "tag": "international_news",
+    "patterns": [
+      "Can you classify international news?",
+      "How do you categorize global news?",
+      "What is happening globally today?"
+    ],
+    "responses": [
+      "International news is categorized under 'International,' covering global events, diplomatic relations, international conflicts, and world affairs."
+    ]
+  },
+  {
+    "tag": "local_news",
+    "patterns": [
+      "Can you classify local news?",
+      "How do you categorize news specific to a region?",
+      "What is the latest local news?"
+    ],
+    "responses": [
+      "Local news focuses on events, issues, and stories specific to a particular region, city, or community. Articles related to these topics are categorized under 'Local News.'"
+    ]
+  },
+  {
+    "tag": "regional_news",
+    "patterns": [
+      "Can you classify regional news?",
+      "How do you categorize news about specific regions?",
+      "What is happening in the region?"
+    ],
+    "responses": [
+      "Regional news is focused on stories relevant to specific geographic regions. Whether it is a state, province, or neighboring countries, articles about regional topics are classified under 'Regional News.'"
+    ]
+  },
+  {
+    "tag": "education_news",
+    "patterns": [
+      "Can you classify news related to education?",
+      "How do you categorize educational news?",
+      "What is happening in education?"
+    ],
+    "responses": [
+      "Education news is categorized under 'Education,' covering topics such as school policies, academic achievements, educational reforms, and developments in higher education."
+    ]
+  },
+  {
+    "tag": "fashion_news",
+    "patterns": [
+      "Can you classify fashion news?",
+      "How do you categorize news about fashion trends?",
+      "What are the latest fashion updates?"
+    ],
+    "responses": [
+      "Fashion news is categorized under 'Fashion,' covering topics such as the latest fashion trends, designer collections, celebrity style, and fashion industry updates."
+    ]
+  },
+  {
+    "tag": "food_news",
+    "patterns": [
+      "Can you classify food news?",
+      "How do you categorize food-related articles?",
+      "What is trending in the food world?"
+    ],
+    "responses": [
+      "Food news is categorized under 'Food,' focusing on topics like new recipes, restaurant openings, food trends, culinary innovations, and nutrition."
+    ]
+  },
+  {
+    "tag": "transportation_news",
+    "patterns": [
+      "Can you classify transportation news?",
+      "How do you categorize news about travel and transport?",
+      "What is new in transportation?"
+    ],
+    "responses": [
+      "Transportation news is categorized under 'Transportation,' covering topics such as new transportation technologies, public transport developments, traffic updates, and air travel news."
+    ]
+  },
+  {
+    "tag": "legal_news",
+    "patterns": [
+      "Can you classify legal news?",
+      "How do you categorize news about laws and legal issues?",
+      "What are the latest legal news stories?"
+    ],
+    "responses": [
+      "Legal news is classified under 'Legal,' focusing on topics like new laws, court cases, legal controversies, and changes in legislation."
+    ]
+  },
+  {
+    "tag": "celebrity_news",
+    "patterns": [
+      "Can you classify celebrity news?",
+      "How do you categorize celebrity gossip?",
+      "What is new in the world of celebrities?"
+    ],
+    "responses": [
+      "Celebrity news is classified under 'Celebrity News,' covering topics such as celebrity interviews, gossip, fashion, scandals, and updates from the entertainment world."
+    ]
+  },
+  {
+    "tag": "technology_trends",
+    "patterns": [
+      "Can you classify news on tech trends?",
+      "How do you categorize news about new technology developments?",
+      "What are the latest tech trends?"
+    ],
+    "responses": [
+      "Tech trends are categorized under 'Technology Trends,' covering emerging innovations, breakthroughs, and upcoming trends in fields like AI, blockchain, and quantum computing."
+    ]
+  },
+  {
+    "tag": "news_categorization_for_trending_news",
+    "patterns": [
+      "How is news categorization used for trending news?",
+      "Can news categorization identify trending topics?",
+      "Give an example of news categorization in trending news."
+    ],
+    "responses": [
+      "News categorization can be used to identify trending topics by classifying news articles into categories and analyzing which categories have the most articles over time. This helps in curating trending news for readers."
+    ]
+  }
+]
+}
