@@ -220,28 +220,32 @@
         $('#toastBody, #chatInputGroup').toggleClass('d-none');
       });
 
-      // Submit chat message
       $('#submit-chat').on('click', function () {
-        const userMessage = $('#chat-text-desk').val();
-        if (userMessage.trim() !== '') {
-          appendUserMessage(userMessage);
+  const userMessage = $('#chat-text-desk').val();
+  if (userMessage.trim() !== '') {
+    appendUserMessage(userMessage);
 
-          $.ajax({
-            url: "/get", // Flask route
-            type: "GET",
-            data: { msg: userMessage },
-            success: function (response) {
-              appendBotMessage(response);
-            },
-            error: function () {
-              appendBotMessage("Sorry, an error occurred. Please try again.");
-            },
-          });
+    $.ajax({
+      url: "/get", // Flask route
+      type: "GET",
+      data: { msg: userMessage },
+      success: function (response) {
+        appendBotMessage(response);
+      },
+      error: function (jqXHR, textStatus, errorThrown) {
+        console.error("AJAX Request Failed");
+        console.error("Status: " + textStatus);
+        console.error("Error Thrown: " + errorThrown);
+        console.error("Response Text: " + jqXHR.responseText);
+        appendBotMessage("Sorry, an error occurred. Please try again.");
+      },
+    });
 
-          // Clear the input field
-          $('#chat-text-desk').val('');
-        }
-      });
+    // Clear the input field
+    $('#chat-text-desk').val('');
+  }
+});
+
 
       // Append user message to chat
       function appendUserMessage(message) {
